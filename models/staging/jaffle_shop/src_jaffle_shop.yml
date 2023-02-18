@@ -6,7 +6,25 @@ sources:
     schema: jaffle_shop
     tables:
       - name: customers
+        columns:
+        - name: id
+          description: id
+          # tests added for not_null and unique for id column
+          tests:
+            - unique
+            - not_null
+            
+        
       - name: orders
+        columns:
+        - name: id
+          description: id
+          # tests added for not_null and unique for id column
+          tests:
+            - unique
+            - not_null
+            
+        
       # add freshnes check to the table (run it by command (source freshness))
         loaded_at_field: _etl_loaded_at
         freshness:
