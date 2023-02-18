@@ -8,6 +8,7 @@ sources:
       - name: customers
       - name: orders
         loaded_at_field: _etl_loaded_at
+        # add freshnes check to the table (run it by command (source freshness))
         freshness:
           warn_after: {count: 12, period: hour}
           error_after: {count: 24, period: hour}
@@ -17,3 +18,7 @@ sources:
     schema: stripe
     tables:
       - name: payment
+        loaded_at_field: _batched_at
+        freshness:
+          warn_after: {count: 12, period: hour}
+          error_after: {count: 24, period: hour}
