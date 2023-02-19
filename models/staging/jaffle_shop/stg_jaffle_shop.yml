@@ -1,5 +1,9 @@
 version: 2
 
+seeds:
+  - name: employees
+    description: manual map of the employess
+
 models:
   - name: stg_customers
     description: one unique customer per row
