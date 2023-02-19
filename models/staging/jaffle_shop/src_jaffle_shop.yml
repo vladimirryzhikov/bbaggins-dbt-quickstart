@@ -2,13 +2,15 @@ version: 2
 
 sources:
   - name: jaffle_shop
+    description: a clone of a learn project from dbt
     database: dbt-tutorial
     schema: jaffle_shop
     tables:
       - name: customers
+        description: Raw customers data 
         columns:
         - name: id
-          description: id
+          description: Primary key for the raw customers data
           # tests added for not_null and unique for id column
           tests:
             - unique
@@ -16,9 +18,10 @@ sources:
             
         
       - name: orders
+        description: Raw orders data 
         columns:
         - name: id
-          description: id
+          description: Primary key for the raw orders data
           # tests added for not_null and unique for id column
           tests:
             - unique
